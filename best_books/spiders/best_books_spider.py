@@ -36,3 +36,7 @@ class BestBooksSpider(scrapy.Spider):
                 'goodreads_score': score_text,
                 #'number_of_user_voted': number_of_user_voted,
             }
+
+        next_page = response.css('a.next_page').xpath('@href').extract_first()
+        if next_page is not None:
+            yield response.follow(next_page, callback=self.parse)

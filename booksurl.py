@@ -7,8 +7,8 @@
 #    f.write(url_json)
 import json
 
-with open('books.json') as data_file:
+with open('books2000s.json') as data_file:
     data = json.load(data_file)
 
-print(data[0]['goodreads_book_url'])
-print(len(data)) 
+#print(data[0]['goodreads_book_url'])
+print(len(data))

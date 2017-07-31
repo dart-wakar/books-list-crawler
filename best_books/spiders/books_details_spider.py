@@ -1,7 +1,7 @@
 import scrapy
 import json
 
-with open('allbooks.json') as data_file:
+with open('books2000s.json') as data_file:
     data = json.load(data_file)
 
 class BooksDetailsSpider(scrapy.Spider):

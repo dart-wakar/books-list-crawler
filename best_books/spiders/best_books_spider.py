@@ -3,7 +3,7 @@ import scrapy
 class BestBooksSpider(scrapy.Spider):
     name = 'bestbooks'
     start_urls = [
-        'https://www.goodreads.com/list/show/4093.Best_Books_of_the_Decade_2010_s',
+        'https://www.goodreads.com/list/show/5',
     ]
 
     def parse(self,response):

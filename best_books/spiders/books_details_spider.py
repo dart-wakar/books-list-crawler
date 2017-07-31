@@ -1,7 +1,7 @@
 import scrapy
 import json
 
-with open('books.json') as data_file:
+with open('allbooks.json') as data_file:
     data = json.load(data_file)
 
 class BooksDetailsSpider(scrapy.Spider):
@@ -11,7 +11,7 @@ class BooksDetailsSpider(scrapy.Spider):
     ]
 
     def nextparse(self,response):
-        row_titles = response.css('div.infoBoxRowTitle').extract()
+        row_titles = response.css('div.infoBoxRowTitle::text').extract()
         row_items = response.css('div.infoBoxRowItem')
         info = {}
         for i in range(0,len(row_titles)):
